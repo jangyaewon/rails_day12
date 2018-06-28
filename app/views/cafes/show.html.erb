@@ -13,5 +13,8 @@
 </ul>
 
 <!-- 새글 등록 버튼 -->
-<%= link_to "카페가입하기",join_cafe_path(@cafe), method: 'POST' , class: "btn btn-primary" %>
-<br><%= link_to '새글쓰기', new_post_path(cafe_id: @cafe.id), class: 'btn btn-info'%>
+<% #unless @cafe.is_member?(current_user) %>
+  <%= link_to "카페가입하기",join_cafe_path(@cafe), method: 'POST' , class: "btn btn-primary" %>
+<% #end%>
+<%= link_to '새글쓰기', new_post_path(cafe_id: @cafe.id), class: 'btn btn-info'%>
+<!--(cafe_id: @cafe.id)-->

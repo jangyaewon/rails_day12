@@ -56,3 +56,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #bootstrap
 gem 'bootstrap', '~> 4.1.1'
 gem 'faker'
+
+#이미지 업로더
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+
+#AWS
+gem 'fog-aws'
+#환경변수
+gem 'figaro'

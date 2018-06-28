@@ -9,9 +9,25 @@
   <%= @post.contents %>
 </p>
 
+<p>
+  <strong>ImagePath:</strong>
+  <img src="<%= @post.image_path %>" width= "100%"/>
+</p>
+
+<p>
+  <strong>Thumb Fill:</strong>
+  <img src="<%= @post.image_path.thumb_Fill %>"/>
+</p>
+
+<p>
+  <strong>Thumb Fit:</strong>
+  <img src="<%= @post.image_path.thumb_Fit %>"/>
+</p>
 
 <%= link_to '수정', edit_post_path(@post), class: 'btn btn-warning text-white' %> &nbsp;
-<%= link_to '목록', posts_path, class: 'btn btn-info' %>&nbsp;
+
+<!--@post가 어디 카페에 종속되어있는지 알려준다.-->
+<%= link_to '목록', cafe_path(@post.daum), class: 'btn btn-info' %>&nbsp;
 <%= link_to '삭제', post_path(@post), class: 'btn btn-danger', method: 'DELETE', data: {confirm: "삭제하시겠습니까?"}%>
 
 <br><br>
